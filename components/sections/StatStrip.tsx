@@ -9,21 +9,17 @@ const stats: Array<{ kind: 'count' | 'text'; value?: number; sep?: string; text?
 
 export function StatStrip() {
   return (
-    <section className="bg-noir">
-      <div className="wrap-wide grid grid-cols-2 lg:grid-cols-4">
+    <section className="border-y border-noir/10 bg-lait">
+      <div className="wrap-wide grid grid-cols-2 divide-noir/10 lg:grid-cols-4 lg:divide-x">
         {stats.map((s, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center justify-center px-4 py-12 text-center lg:min-h-[170px] lg:py-0"
-            style={{ borderRight: i < 3 ? '1px solid rgba(167,141,74,0.3)' : 'none' }}
-          >
+          <div key={i} className="flex flex-col items-center justify-center px-4 py-14 text-center">
             <span
-              className="font-display leading-none text-lait"
-              style={{ fontSize: 'clamp(2.6rem,5vw,5rem)', fontStyle: s.italic ? 'italic' : 'normal' }}
+              className="font-display leading-none text-noir"
+              style={{ fontSize: 'clamp(2.4rem,5vw,4.5rem)', fontStyle: s.italic ? 'italic' : 'normal' }}
             >
               {s.kind === 'count' ? <CountUp end={s.value!} separator={s.sep || ''} /> : s.text}
             </span>
-            <span className="mt-4 max-w-[170px] font-sans text-[11px] uppercase leading-snug tracking-[0.13em] text-or-clair">
+            <span className="mt-4 max-w-[160px] font-sans text-[10px] uppercase leading-snug tracking-[0.22em] text-or">
               {s.label}
             </span>
           </div>

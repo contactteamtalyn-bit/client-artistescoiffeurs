@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 
 const LINKS = [
   { label: 'Le Marais', href: '#marais' },
-  { label: 'La Signature', href: '#palette' },
+  { label: 'David', href: '#palette' },
   { label: 'Prestations', href: '#services' },
   { label: 'Galerie', href: '#galerie' },
   { label: 'Contact', href: '#contact' },
@@ -27,21 +27,21 @@ export function Navigation() {
     <header
       className={cn(
         'fixed inset-x-0 top-11 z-[65] transition-all duration-500 md:top-9',
-        scrolled ? 'border-b border-noir/10 bg-lait/85 backdrop-blur-md' : 'bg-transparent'
+        scrolled ? 'border-b border-noir/10 bg-lait/90 text-noir backdrop-blur-md' : 'border-b border-white/15 bg-transparent text-white'
       )}
     >
-      <nav className="wrap-wide flex h-16 items-center justify-between">
-        <a href="#top" className="font-sans font-bold uppercase tracking-[0.18em] text-noir">
-          <span className="hidden text-[13px] sm:inline">Artistes Coiffeurs Coloristes</span>
-          <span className="text-[14px] sm:hidden">A·C·C</span>
+      <nav className="wrap-wide flex h-[60px] items-center justify-between">
+        <a href="#top" className="font-display text-[17px] tracking-tight">
+          <span className="hidden sm:inline">Artistes Coiffeurs Coloristes</span>
+          <span className="sm:hidden">A.C.C.</span>
         </a>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="link-underline font-sans text-[12px] uppercase tracking-[0.12em] text-noir/70 transition-colors hover:text-noir"
+              className="link-underline font-sans text-[11px] uppercase tracking-[0.2em] opacity-80 transition-opacity hover:opacity-100"
             >
               {l.label}
             </a>
@@ -51,7 +51,7 @@ export function Navigation() {
         <button
           type="button"
           onClick={open}
-          className="bg-noir px-5 py-2.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-lait transition-colors hover:bg-or md:text-[12px]"
+          className="border border-current px-4 py-2 font-sans text-[11px] uppercase tracking-[0.2em] transition-colors hover:bg-or hover:border-or hover:text-lait"
         >
           Réserver
         </button>

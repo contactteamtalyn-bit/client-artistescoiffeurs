@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from 'next'
-import { Yeseva_One, Nunito } from 'next/font/google'
+import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import { DemoBanner } from '@/components/DemoBanner'
 import { DemoModalProvider } from '@/components/DemoModal'
 import { Navigation } from '@/components/Navigation'
 
-const display = Yeseva_One({
+const display = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
   adjustFontFallback: false,
 })
 
-const sans = Nunito({
+const sans = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-sans',
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     icon: [
       {
         url:
-          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A1A18'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='38' fill='%23A78D4A'%3EA%3C/text%3E%3C/svg%3E",
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231A1A18'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23FAF8F4'%3EA%3C/text%3E%3C/svg%3E",
       },
     ],
   },
